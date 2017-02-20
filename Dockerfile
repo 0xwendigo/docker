@@ -10,7 +10,7 @@ ENV APACHE_LOG_DIR /var/log/apache2
 RUN /usr/sbin/a2ensite default-ssl
 RUN /usr/sbin/a2enmod ssl
 RUN /usr/sbin/a2dismod 'mpm_*' && /usr/sbin/a2enmod mpm_prefork
-RUN /usr/sbin/a2enmod php5
+RUN /usr/sbin/a2enmod php
 
 EXPOSE 80
 EXPOSE 443
