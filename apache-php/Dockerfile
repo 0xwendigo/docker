@@ -1,7 +1,7 @@
 FROM ubuntu:16.10
 MAINTAINER Alexandre Schwartzmann <schwartzmann.a@gmail.com>
 
-RUN apt-get update && apt-get -y install apache2 php7.0 libapache2-mod-php php-mysql php-gd php-gettext && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get -y install apache2 php7.0 libapache2-mod-php php-mysql php-mysqli php-gd php-gettext && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
