@@ -1,6 +1,6 @@
 # README #
 
-This is an Apache image including SSL and PHP7 support. In order to use this image effectively, you'll need to mount:
+This is an Apache 2.4 image including SSL and PHP 7.0 support. In order to use this image effectively, you'll need to mount:
 
 - /var/www/html for your site content (e.g. using "-v /home/jdoe/mysite/:/var/www/html/")
 - /var/log/apache2, optionally, if you want to store logfiles visibly outside the container
