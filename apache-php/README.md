@@ -1,4 +1,4 @@
-# README TO BE TESTED #
+# README #
 
 This is an Apache image including SSL and PHP7 support. In order to use this image effectively, you'll need to mount:
 
