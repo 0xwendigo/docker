@@ -3,7 +3,7 @@ MAINTAINER Alexandre Schwartzmann <schwartzmann.a@gmail.com>
 
 RUN sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/mssql-ubuntu-xenial-release/ xenial main" > /etc/apt/sources.list.d/mssqlpreview.list'
 RUN apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
-
+RUN apt-get update && apt-get -y install apt-transport-https
 RUN apt-get update && apt-get -y install apache2 php7.0 libapache2-mod-php php-mysql php-mysqli php-gd php-gettext msodbcsql unixodbc-dev-utf16 && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV APACHE_RUN_USER www-data
