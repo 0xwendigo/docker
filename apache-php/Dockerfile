@@ -1,6 +1,7 @@
 FROM ubuntu:xenial
 MAINTAINER Alexandre Schwartzmann <schwartzmann.a@gmail.com>
 
+ENV ACCEPT_EULA Y
 
 RUN apt-get update && apt-get -y install apt-transport-https
 RUN sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/mssql-ubuntu-xenial-release/ xenial main" > /etc/apt/sources.list.d/mssqlpreview.list'
