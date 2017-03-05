@@ -1,0 +1,9 @@
+RewriteEngine On 
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L] 
+AuthName "Login"
+AuthType Basic
+AuthUserFile ".htpasswd"
+Require valid-user
+
