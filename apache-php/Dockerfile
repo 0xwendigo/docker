@@ -3,12 +3,11 @@ MAINTAINER Alexandre Schwartzmann <schwartzmann.a@gmail.com>
 
 ENV ACCEPT_EULA Y
 
-RUN apt-get update && apt-get -y install apt-transport-https
+RUN apt-get update && apt-get -y install apt-transport-https wget
 RUN sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/mssql-ubuntu-xenial-release/ xenial main" > /etc/apt/sources.list.d/mssqlpreview.list'
 RUN sh -c 'echo 'deb [arch=amd64] http://packages.dotdeb.org jessie all' > /etc/apt/sources.list.d/dotdeb.org.list'
 RUN apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
-RUN wget https://www.dotdeb.org/dotdeb.gpg
-RUN apt-key add dotdeb.gpg
+RUN wget -O- https://www.dotdeb.org/dotdeb.gpg | apt-key add -
 RUN apt-get update && apt-get -y install apache2 php7.0 libapache2-mod-php7.0 php7.0-mysql php7.0-mysqli php7.0-gd php7.0-gettext msodbcsql unixodbc-dev-utf16 && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV APACHE_RUN_USER www-data
