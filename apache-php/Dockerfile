@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM debian:jessie
 MAINTAINER Alexandre Schwartzmann <schwartzmann.a@gmail.com>
 
 ENV ACCEPT_EULA Y
