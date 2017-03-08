@@ -1,7 +1,7 @@
 FROM debian:jessie
 MAINTAINER Alexandre Schwartzmann <schwartzmann.a@gmail.com>
 
-RUN apt-get update && apt-get -y install apache2 php5 libapache2-mod-php5 php5-mysql php5-mysqlnd php5-gd php-gettext php5-pgsql php5-sybase php5-mssql && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get -y install apache2 php5 libapache2-mod-php5 php5-mysqlnd php5-gd php-gettext php5-pgsql php5-sybase php5-mssql && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
