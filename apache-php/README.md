@@ -1,6 +1,6 @@
 # README #
 
-This is an Apache 2.4 image including SSL and PHP 7.0 support. In order to use this image effectively, you'll need to mount:
+This is an Apache 2.4 image including SSL and PHP support. In order to use this image effectively, you'll need to mount:
 
 - /var/www/html for your site content (e.g. using "-v /home/jdoe/mysite/:/var/www/html/")
 - /var/log/apache2, optionally, if you want to store logfiles visibly outside the container
@@ -18,3 +18,9 @@ Assuming you have your content at /home/jdoe/mysite/, the below will be sufficie
 - Serving actual content with SSL support: `docker run -p 80:80 -p 443:443 -v /home/jdoe/mysite/:/var/www/html/ -d nex84/apache-php`
 - ... without SSL support: `docker run -p 80:80 -v /home/jdoe/mysite/:/var/www/html/ -d nex84/apache-php`
 - ... using non-standard ports: `docker run -p 8080:80 -p 8443:443 -v /home/jdoe/mysite/:/var/www/html/ -d nex84/apache-php`
+
+## Tag notes ##
+
+There are 2 tags currently available :
+- ubuntu-php7.0 / latest : based on ubuntu:xenial, apache 2.4, php7.0
+- debian-php5.6 : based on debian:jessie, apache 2.4, php5.6
