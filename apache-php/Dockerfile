@@ -1,6 +1,11 @@
 FROM debian:jessie
 MAINTAINER Alexandre Schwartzmann <schwartzmann.a@gmail.com>
 
+LABEL version="1.0"
+LABEL os-version="debian:jessie"
+LABEL apache-version="2.4"
+LABEL php-version="5.6"
+
 RUN apt-get update && apt-get -y install apache2 php5 libapache2-mod-php5 php5-mysqlnd php5-gd php-gettext php5-pgsql php5-sybase php5-mssql && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV APACHE_RUN_USER www-data
