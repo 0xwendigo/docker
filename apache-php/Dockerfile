@@ -14,18 +14,17 @@ ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2
 
-RUN /usr/sbin/a2ensite default-ssl
 RUN /usr/sbin/a2enmod ssl
 RUN /usr/sbin/a2dismod 'mpm_*' && /usr/sbin/a2enmod mpm_prefork
 RUN /usr/sbin/a2enmod php7
 
-ADD .htaccess /var/www/html/
-ADD .htpasswd /var/www/html/
-ADD phpinfo.php /var/www/html/
-ADD testsql.php /var/www/html/
+ADD .htaccess /var/www/localhost/htdocs/
+ADD .htpasswd /var/www/localhost/htdocs/
+ADD phpinfo.php /var/www/localhost/htdocs/
+ADD testsql.php /var/www/localhost/htdocs/
 
-RUN ln -sf ./phpinfo.php /var/www/html/index.php
-RUN mv /var/www/html/index.html /var/www/html/index.html.orig
+RUN ln -sf ./phpinfo.php /var/www/localhost/htdocs/index.php
+RUN mv /var/www/localhost/htdocs/index.html /var/www/localhost/htdocs/index.html.orig
 
 EXPOSE 80
 EXPOSE 443
