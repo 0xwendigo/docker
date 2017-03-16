@@ -14,10 +14,6 @@ ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2
 
-RUN a2enmod ssl
-RUN a2dismod 'mpm_*' && a2enmod mpm_prefork
-RUN a2enmod php7
-
 ADD .htaccess /var/www/localhost/htdocs/
 ADD .htpasswd /var/www/localhost/htdocs/
 ADD phpinfo.php /var/www/localhost/htdocs/
