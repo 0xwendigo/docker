@@ -1,5 +1,13 @@
 # README #
 
+Versions currently available :
+
+-	[`alpine-php7.0` (*alpine/apache-php/Dockerfile*)](https://github.com/nex84/docker/blob/alpine/apache-php/Dockerfile) : based on alpine:3.5, apache 2.4, php7.0
+-	[`debian-php5.6` (*debian/apache-php/Dockerfile*)](https://github.com/nex84/docker/blob/debian/apache-php/Dockerfile) : based on debian:jessie, apache 2.4, php5.6
+-	[`ubuntu-php7.0`, `latest` (*master/apache-php/Dockerfile*)](https://github.com/nex84/docker/blob/master/apache-php/Dockerfile) : based on ubuntu:xenial, apache 2.4, php7.0
+
+## Description ##
+
 This is an Apache 2.4 image including SSL and PHP support. In order to use this image effectively, you'll need to mount:
 
 - /var/www/html for your site content (e.g. using "-v /home/jdoe/mysite/:/var/www/html/")
@@ -19,8 +27,4 @@ Assuming you have your content at /home/jdoe/mysite/, the below will be sufficie
 - ... without SSL support: `docker run -p 80:80 -v /home/jdoe/mysite/:/var/www/html/ -d nex84/apache-php`
 - ... using non-standard ports: `docker run -p 8080:80 -p 8443:443 -v /home/jdoe/mysite/:/var/www/html/ -d nex84/apache-php`
 
-## Tag notes ##
 
-There are 2 tags currently available :
-- ubuntu-php7.0 / latest : based on ubuntu:xenial, apache 2.4, php7.0
-- debian-php5.6 : based on debian:jessie, apache 2.4, php5.6
