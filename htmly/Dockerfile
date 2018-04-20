@@ -9,6 +9,11 @@ LABEL php-version="5.6.35"
 ENV ACCEPT_EULA Y
 
 ADD installer.php /var/www/html/
+ADD htmly.conf /etc/apache2/sites-available/
+
+RUN a2enmod rewrite
+RUN a2dissite 000-default
+RUN a2ensite htmly
 
 EXPOSE 80
 
