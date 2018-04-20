@@ -8,8 +8,7 @@ LABEL php-version="5.6.35"
 
 ENV ACCEPT_EULA Y
 
-
-
+ADD installer.php /var/www/html/
 
 EXPOSE 80
 
