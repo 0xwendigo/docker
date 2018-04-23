@@ -9,7 +9,7 @@ LABEL php-version="5.6.35"
 ADD installer.php /var/www/html/
 ADD htmly.conf /etc/apache2/sites-available/
 
-RUN wget https://github.com/danpros/htmly/archive/v2.7.4.tar.gz ; tar -zxf htmly-v2.7.4.tar.gz -C /var/www/html/
+RUN wget https://github.com/danpros/htmly/archive/v2.7.4.tar.gz ; tar -zxf v2.7.4.tar.gz -C /var/www/html/
 RUN a2enmod rewrite
 RUN a2dissite 000-default
 RUN a2ensite htmly
